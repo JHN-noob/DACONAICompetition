@@ -1,6 +1,6 @@
 # Structure Stability Pipeline
 
-This project is designed to run from the `dacon_ai_1/` root in Jupyter.
+This project is designed to run from the `dacon-ai-1/` root in Jupyter.
 
 ## Current Baseline
 
