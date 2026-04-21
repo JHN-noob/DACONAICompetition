@@ -1,0 +1,93 @@
+{
+  "run_name": "stack_lgb_meta_v005_context_aware",
+  "model_type": "lightgbm",
+  "cv_strategy": "layout_holdout",
+  "feature_count": 25,
+  "categorical_columns": [
+    "layout_type"
+  ],
+  "target_transform": "none",
+  "sample_weight_mode": "none",
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "valid_mae": 8.494807556207665,
+      "best_iteration": 335,
+      "train_rows": 200000,
+      "valid_rows": 50000,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\stack_lgb_meta_v005_context_aware_fold0.txt"
+    },
+    {
+      "fold": 1,
+      "valid_mae": 8.954736369205149,
+      "best_iteration": 255,
+      "train_rows": 198125,
+      "valid_rows": 51875,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\stack_lgb_meta_v005_context_aware_fold1.txt"
+    },
+    {
+      "fold": 2,
+      "valid_mae": 9.406267773337873,
+      "best_iteration": 512,
+      "train_rows": 200000,
+      "valid_rows": 50000,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\stack_lgb_meta_v005_context_aware_fold2.txt"
+    },
+    {
+      "fold": 3,
+      "valid_mae": 8.588358210602511,
+      "best_iteration": 654,
+      "train_rows": 200625,
+      "valid_rows": 49375,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\stack_lgb_meta_v005_context_aware_fold3.txt"
+    },
+    {
+      "fold": 4,
+      "valid_mae": 7.561691849725165,
+      "best_iteration": 228,
+      "train_rows": 201250,
+      "valid_rows": 48750,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\stack_lgb_meta_v005_context_aware_fold4.txt"
+    }
+  ],
+  "oof_mae": 8.609053518296488,
+  "stacking_members": [
+    "lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative",
+    "stack_lgb_meta_v003_log1p_family",
+    "lightgbm_v013_no_layout_id_core_holdout_log1p"
+  ],
+  "stacking_meta_features": [
+    "context_columns",
+    "layout_type",
+    "member_predictions",
+    "pairwise_diff",
+    "prediction_stats"
+  ],
+  "stacking_feature_columns": [
+    "layout_type",
+    "pred__lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative",
+    "pred__stack_lgb_meta_v003_log1p_family",
+    "pred__lightgbm_v013_no_layout_id_core_holdout_log1p",
+    "ctx__order_inflow_per_pack_station",
+    "ctx__pack_utilization_scenario_mean",
+    "ctx__battery_mean",
+    "ctx__battery_mean_scenario_delta",
+    "ctx__congestion_score_scenario_delta",
+    "ctx__manual_override_ratio_scenario_delta",
+    "ctx__low_battery_ratio_scenario_delta",
+    "ctx__pack_utilization_scenario_delta",
+    "ctx__max_zone_density_scenario_delta",
+    "ctx__order_inflow_15m_scenario_delta",
+    "ctx__avg_trip_distance_scenario_delta",
+    "ctx__loading_dock_util_scenario_delta",
+    "ctx__forklift_active_count_scenario_delta",
+    "ctx__shift_handover_delay_min_scenario_delta",
+    "stack_pred_mean",
+    "stack_pred_std",
+    "stack_pred_min",
+    "stack_pred_max",
+    "diff__pred__lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative__pred__stack_lgb_meta_v003_log1p_family",
+    "diff__pred__lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative__pred__lightgbm_v013_no_layout_id_core_holdout_log1p",
+    "diff__pred__stack_lgb_meta_v003_log1p_family__pred__lightgbm_v013_no_layout_id_core_holdout_log1p"
+  ]
+}

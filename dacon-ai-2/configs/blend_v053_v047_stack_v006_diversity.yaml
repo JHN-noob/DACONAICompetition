@@ -1,0 +1,26 @@
+# Final best submission model.
+# Public score: 10.0039760874
+run_name: blend_v053_v047_stack_v006_diversity
+seed: 42
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+columns:
+  id_col: ID
+  group_col: scenario_id
+  target_col: avg_delay_minutes_next_30m
+
+ensemble:
+  members:
+    - blend_v047_residual_v029_shrinkage
+    - stack_lgb_meta_v006_strong_family_context_aware
+  weight_candidates:
+    - 0.60
+    - 0.63
+    - 0.66
+    - 0.69
+    - 0.72
+    - 0.75
+    - 0.78

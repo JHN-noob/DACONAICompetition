@@ -1,0 +1,53 @@
+# Tuned log1p LightGBM variant used by the log-family stack.
+run_name: lightgbm_v014_no_layout_id_core_holdout_tuned_log1p
+seed: 42
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+columns:
+  id_col: ID
+  group_col: scenario_id
+  target_col: avg_delay_minutes_next_30m
+
+features:
+  use_layout: true
+  use_layout_id: false
+  use_layout_type: true
+  use_layout_interaction_features: true
+  use_row_stats: true
+  use_scenario_stats: true
+  use_scenario_relative_features: false
+
+cv:
+  strategy: layout_holdout
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+  n_bins: 10
+
+training:
+  target_transform: log1p
+  sample_weight_mode: none
+
+model:
+  type: lightgbm
+  params:
+    objective: mae
+    metric: l1
+    n_estimators: 9000
+    learning_rate: 0.015
+    num_leaves: 79
+    feature_fraction: 0.78
+    bagging_fraction: 0.72
+    bagging_freq: 1
+    min_child_samples: 40
+    min_split_gain: 0.02
+    lambda_l1: 1.0
+    lambda_l2: 8.0
+    random_state: 42
+    n_jobs: -1
+    verbose: -1
+    early_stopping_rounds: 400
+    verbose_eval: 200

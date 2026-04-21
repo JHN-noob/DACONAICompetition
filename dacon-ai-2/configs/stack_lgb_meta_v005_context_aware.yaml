@@ -1,0 +1,71 @@
+# Context-aware stack over v021, stack_v003, and v013.
+run_name: stack_lgb_meta_v005_context_aware
+seed: 42
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+columns:
+  id_col: ID
+  group_col: scenario_id
+  target_col: avg_delay_minutes_next_30m
+
+cv:
+  strategy: layout_holdout
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+  n_bins: 10
+
+stacking:
+  members:
+    - lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative
+    - stack_lgb_meta_v003_log1p_family
+    - lightgbm_v013_no_layout_id_core_holdout_log1p
+  meta_features:
+    - member_predictions
+    - prediction_stats
+    - pairwise_diff
+    - layout_type
+    - context_columns
+  context_source_config: configs/lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative.yaml
+  context_columns:
+    - order_inflow_per_pack_station
+    - pack_utilization_scenario_mean
+    - battery_mean
+    - battery_mean_scenario_delta
+    - congestion_score_scenario_delta
+    - manual_override_ratio_scenario_delta
+    - low_battery_ratio_scenario_delta
+    - pack_utilization_scenario_delta
+    - max_zone_density_scenario_delta
+    - order_inflow_15m_scenario_delta
+    - avg_trip_distance_scenario_delta
+    - loading_dock_util_scenario_delta
+    - forklift_active_count_scenario_delta
+    - shift_handover_delay_min_scenario_delta
+  meta_model:
+    type: lightgbm
+    params:
+      objective: mae
+      metric: l1
+      n_estimators: 5000
+      learning_rate: 0.015
+      num_leaves: 63
+      feature_fraction: 0.82
+      bagging_fraction: 0.82
+      bagging_freq: 1
+      min_child_samples: 100
+      min_split_gain: 0.02
+      lambda_l1: 2.0
+      lambda_l2: 12.0
+      random_state: 42
+      n_jobs: -1
+      verbose: -1
+      early_stopping_rounds: 300
+      verbose_eval: 200
+
+training:
+  target_transform: none
+  sample_weight_mode: none

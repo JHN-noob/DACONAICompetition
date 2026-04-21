@@ -1,0 +1,18 @@
+{
+  "run_name": "blend_v047_residual_v029_shrinkage",
+  "members": [
+    "lightgbm_v029_residual_v021_context_gate",
+    "lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative"
+  ],
+  "weights": {
+    "lightgbm_v029_residual_v021_context_gate": 0.85,
+    "lightgbm_v021_no_layout_id_core_holdout_log1p_scenario_relative": 0.15
+  },
+  "weight_candidates": [
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "oof_mae": 8.58192123378317
+}

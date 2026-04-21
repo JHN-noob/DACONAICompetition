@@ -1,0 +1,21 @@
+{
+  "run_name": "blend_v053_v047_stack_v006_diversity",
+  "members": [
+    "blend_v047_residual_v029_shrinkage",
+    "stack_lgb_meta_v006_strong_family_context_aware"
+  ],
+  "weights": {
+    "blend_v047_residual_v029_shrinkage": 0.69,
+    "stack_lgb_meta_v006_strong_family_context_aware": 0.31
+  },
+  "weight_candidates": [
+    0.6,
+    0.63,
+    0.66,
+    0.69,
+    0.72,
+    0.75,
+    0.78
+  ],
+  "oof_mae": 8.578563233209225
+}

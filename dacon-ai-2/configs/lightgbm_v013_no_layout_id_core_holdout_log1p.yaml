@@ -1,0 +1,53 @@
+# Base log1p LightGBM model.
+run_name: lightgbm_v013_no_layout_id_core_holdout_log1p
+seed: 42
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+columns:
+  id_col: ID
+  group_col: scenario_id
+  target_col: avg_delay_minutes_next_30m
+
+features:
+  use_layout: true
+  use_layout_id: false
+  use_layout_type: true
+  use_layout_interaction_features: true
+  use_row_stats: true
+  use_scenario_stats: true
+  use_scenario_relative_features: false
+
+cv:
+  strategy: layout_holdout
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+  n_bins: 10
+
+training:
+  target_transform: log1p
+  sample_weight_mode: none
+
+model:
+  type: lightgbm
+  params:
+    objective: mae
+    metric: l1
+    n_estimators: 14000
+    learning_rate: 0.011
+    num_leaves: 111
+    feature_fraction: 0.84
+    bagging_fraction: 0.78
+    bagging_freq: 1
+    min_child_samples: 24
+    min_split_gain: 0.008
+    lambda_l1: 0.6
+    lambda_l2: 5.0
+    random_state: 42
+    n_jobs: -1
+    verbose: -1
+    early_stopping_rounds: 600
+    verbose_eval: 200

@@ -1,0 +1,74 @@
+{
+  "run_name": "lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted",
+  "model_type": "lightgbm",
+  "cv_strategy": "layout_holdout",
+  "feature_count": 483,
+  "categorical_columns": [
+    "layout_type"
+  ],
+  "target_transform": "log1p",
+  "sample_weight_mode": "adversarial_test_likelihood",
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "valid_mae": 8.539598312386874,
+      "best_iteration": 7442,
+      "train_rows": 200000,
+      "valid_rows": 50000,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted_fold0.txt"
+    },
+    {
+      "fold": 1,
+      "valid_mae": 8.986844474894562,
+      "best_iteration": 11825,
+      "train_rows": 198125,
+      "valid_rows": 51875,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted_fold1.txt"
+    },
+    {
+      "fold": 2,
+      "valid_mae": 9.45514301792178,
+      "best_iteration": 5092,
+      "train_rows": 200000,
+      "valid_rows": 50000,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted_fold2.txt"
+    },
+    {
+      "fold": 3,
+      "valid_mae": 8.645545531675813,
+      "best_iteration": 3091,
+      "train_rows": 200625,
+      "valid_rows": 49375,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted_fold3.txt"
+    },
+    {
+      "fold": 4,
+      "valid_mae": 7.653017941191067,
+      "best_iteration": 4658,
+      "train_rows": 201250,
+      "valid_rows": 48750,
+      "model_path": "C:\\Users\\JHN\\PythonMLWorkspace\\dacon-ai-2\\outputs\\models\\lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted_fold4.txt"
+    }
+  ],
+  "oof_mae": 8.663552236273203,
+  "sample_weight_summary": {
+    "min": 0.9156500697135925,
+    "max": 1.9492892026901245,
+    "mean": 1.0,
+    "std": 0.1521405577659607
+  },
+  "domain_adaptation": {
+    "fold_auc": [
+      0.999955626,
+      0.9998745840000001,
+      0.9998982540000001,
+      0.9999017699999999,
+      0.9998221539999999
+    ],
+    "mean_auc": 0.9998904775999999,
+    "train_probability_mean": 0.04631210178320653,
+    "train_probability_std": 0.08311622568860834,
+    "weight_clip_low": 0.5,
+    "weight_clip_high": 1.5
+  }
+}

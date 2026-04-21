@@ -1,0 +1,68 @@
+# Domain-weighted log1p LightGBM variant used by the log-family stack.
+run_name: lightgbm_v015_no_layout_id_core_holdout_log1p_adv_weighted
+seed: 42
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+columns:
+  id_col: ID
+  group_col: scenario_id
+  target_col: avg_delay_minutes_next_30m
+
+features:
+  use_layout: true
+  use_layout_id: false
+  use_layout_type: true
+  use_layout_interaction_features: true
+  use_row_stats: true
+  use_scenario_stats: true
+  use_scenario_relative_features: false
+
+cv:
+  strategy: layout_holdout
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+  n_bins: 10
+
+training:
+  target_transform: log1p
+  sample_weight_mode: adversarial_test_likelihood
+
+domain_adaptation:
+  n_splits: 5
+  weight_clip_low: 0.5
+  weight_clip_high: 1.5
+  classifier_params:
+    max_depth: 6
+    max_iter: 300
+    learning_rate: 0.05
+    max_leaf_nodes: 31
+    min_samples_leaf: 80
+    l2_regularization: 1.0
+    early_stopping: true
+    validation_fraction: 0.1
+    n_iter_no_change: 30
+
+model:
+  type: lightgbm
+  params:
+    objective: mae
+    metric: l1
+    n_estimators: 14000
+    learning_rate: 0.011
+    num_leaves: 111
+    feature_fraction: 0.84
+    bagging_fraction: 0.78
+    bagging_freq: 1
+    min_child_samples: 24
+    min_split_gain: 0.008
+    lambda_l1: 0.6
+    lambda_l2: 5.0
+    random_state: 42
+    n_jobs: -1
+    verbose: -1
+    early_stopping_rounds: 600
+    verbose_eval: 200
