@@ -1,0 +1,23 @@
+{
+  "model_names": [
+    "efficientnetv2_m_384_baseline"
+  ],
+  "weights": [
+    1.0
+  ],
+  "min_weights": [
+    1.0
+  ],
+  "max_weights": [
+    1.0
+  ],
+  "selection_split": "dev",
+  "selection_logloss_before_final_calibration": 0.042194075882434845,
+  "final_calibration": {
+    "before_logloss": 0.042194075882434845,
+    "after_logloss": 0.04218680411577225,
+    "best_method": "bias",
+    "b": -0.02470880188047886
+  },
+  "selection_logloss_after_final_calibration": 0.04218680411577225
+}

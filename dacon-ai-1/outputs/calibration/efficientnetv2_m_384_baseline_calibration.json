@@ -1,0 +1,8 @@
+{
+  "before_logloss": 0.022264990955591202,
+  "after_logloss": 0.004480235744267702,
+  "best_method": "temperature",
+  "temperature": 0.7,
+  "selection_split": "oof",
+  "selection_path": "outputs\\oof\\efficientnetv2_m_384_baseline_oof.csv"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "seed": 42,
+    "fold": 0,
+    "run_name": "efficientnetv2_m_384_baseline_seed42_fold0_hardft",
+    "best_logloss": 0.020190853625535965,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed42_fold0_hardft_best.pth",
+    "base_best_logloss": 0.024133795872330666,
+    "hard_samples_in_train": 76
+  },
+  {
+    "seed": 42,
+    "fold": 1,
+    "run_name": "efficientnetv2_m_384_baseline_seed42_fold1_hardft",
+    "best_logloss": 0.01995088905096054,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed42_fold1_hardft_best.pth",
+    "base_best_logloss": 0.02737143263220787,
+    "hard_samples_in_train": 62
+  },
+  {
+    "seed": 42,
+    "fold": 2,
+    "run_name": "efficientnetv2_m_384_baseline_seed42_fold2_hardft",
+    "best_logloss": 0.024189086630940437,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed42_fold2_hardft_best.pth",
+    "base_best_logloss": 0.03204397112131119,
+    "hard_samples_in_train": 52
+  },
+  {
+    "seed": 42,
+    "fold": 3,
+    "run_name": "efficientnetv2_m_384_baseline_seed42_fold3_hardft",
+    "best_logloss": 0.022822504863142967,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed42_fold3_hardft_best.pth",
+    "base_best_logloss": 0.026689087972044945,
+    "hard_samples_in_train": 71
+  },
+  {
+    "seed": 42,
+    "fold": 4,
+    "run_name": "efficientnetv2_m_384_baseline_seed42_fold4_hardft",
+    "best_logloss": 0.01678769290447235,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed42_fold4_hardft_best.pth",
+    "base_best_logloss": 0.02127211168408394,
+    "hard_samples_in_train": 79
+  },
+  {
+    "seed": 52,
+    "fold": 0,
+    "run_name": "efficientnetv2_m_384_baseline_seed52_fold0_hardft",
+    "best_logloss": 0.022215010598301888,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed52_fold0_hardft_best.pth",
+    "base_best_logloss": 0.028235996142029762,
+    "hard_samples_in_train": 70
+  },
+  {
+    "seed": 52,
+    "fold": 1,
+    "run_name": "efficientnetv2_m_384_baseline_seed52_fold1_hardft",
+    "best_logloss": 0.027153583243489265,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed52_fold1_hardft_best.pth",
+    "base_best_logloss": 0.031179385259747505,
+    "hard_samples_in_train": 45
+  },
+  {
+    "seed": 52,
+    "fold": 2,
+    "run_name": "efficientnetv2_m_384_baseline_seed52_fold2_hardft",
+    "best_logloss": 0.02557707391679287,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed52_fold2_hardft_best.pth",
+    "base_best_logloss": 0.02573622763156891,
+    "hard_samples_in_train": 79
+  },
+  {
+    "seed": 52,
+    "fold": 3,
+    "run_name": "efficientnetv2_m_384_baseline_seed52_fold3_hardft",
+    "best_logloss": 0.024559250101447105,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed52_fold3_hardft_best.pth",
+    "base_best_logloss": 0.02885090373456478,
+    "hard_samples_in_train": 73
+  },
+  {
+    "seed": 52,
+    "fold": 4,
+    "run_name": "efficientnetv2_m_384_baseline_seed52_fold4_hardft",
+    "best_logloss": 0.023286152631044388,
+    "best_checkpoint": "outputs\\checkpoints\\efficientnetv2_m_384_baseline_seed52_fold4_hardft_best.pth",
+    "base_best_logloss": 0.02423248440027237,
+    "hard_samples_in_train": 73
+  }
+]

@@ -1,0 +1,2 @@
+"""Structure stability ensemble pipeline."""
+
