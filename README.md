@@ -4,7 +4,7 @@
 
 이 저장소는 DACON AI 경진대회 참여 과정에서 작성한 실험 코드와 제출 파이프라인을 정리한 저장소입니다.
 
-각 프로젝트는 독립적인 실험 단위로 구성되어 있으며, 데이터 로딩, 전처리, 모델 학습, 검증, 앙상블, 제출 파일 생성 과정을 재현할 수 있도록 구성했습니다. 대회별 문제 설명이나 원본 데이터는 포함하지 않고, 코드와 실험 구조 중심으로 정리했습니다.
+각 프로젝트는 독립적인 실험 단위로 구성되어 있으며, 데이터 로딩, 전처리, 모델 학습, 검증, 앙상블, 제출 파일 생성 과정을 재현할 수 있도록 구성했습니다. 대회별 문제 설명이나 원본 데이터는 포함하지 않고 코드와 실험 구조 중심으로 정리했습니다.
 
 ## 프로젝트 구성
 
@@ -53,16 +53,16 @@ from src.common import load_config
 
 `outputs/`에는 다음과 같은 파일이 생성될 수 있습니다.
 
-- fold별 모델 checkpoint
+- Fold별 모델 Checkpoint
 - OOF prediction
-- test prediction
-- feature importance
-- metrics/log JSON 또는 CSV
-- 최종 submission CSV
+- Test prediction
+- Feature importance
+- Metrics/log JSON 또는 CSV
+- 최종 Submission CSV
 
 ## 주의사항
 
 - 원본 데이터는 저장소에 포함하지 않습니다.
 - 대회별 세부 문제 내용은 포함하지 않습니다.
-- 노트북은 실행 편의를 위한 진입점이며, 재사용 가능한 로직은 `src/`에 둡니다.
+- 노트북은 실행 편의를 위한 진입점이며 재사용 가능한 로직은 `src/`에 둡니다.
 - 절대경로 대신 상대경로를 사용합니다.
